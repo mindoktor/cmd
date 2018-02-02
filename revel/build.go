@@ -10,7 +10,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/revel/cmd/harness"
+	"mindoktor.io/cmd/harness"
 	"github.com/revel/revel"
 )
 

@@ -15,7 +15,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/revel/cmd/harness"
+	"mindoktor.io/cmd/harness"
 	"github.com/revel/modules/testrunner/app/controllers"
 	"github.com/revel/revel"
 )

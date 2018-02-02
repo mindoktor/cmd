@@ -8,7 +8,7 @@ import (
 	"go/build"
 	"strconv"
 
-	"github.com/revel/cmd/harness"
+	"mindoktor.io/cmd/harness"
 	"github.com/revel/revel"
 )
 
