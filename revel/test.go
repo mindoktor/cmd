@@ -15,9 +15,9 @@ import (
 	"strings"
 	"time"
 
-	"mindoktor.io/cmd/harness"
 	"github.com/revel/modules/testrunner/app/controllers"
 	"github.com/revel/revel"
+	"mindoktor.io/cmd/harness"
 )
 
 var cmdTest = &Command{

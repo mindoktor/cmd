@@ -10,8 +10,8 @@ import (
 	"path/filepath"
 	"strings"
 
-	"mindoktor.io/cmd/harness"
 	"github.com/revel/revel"
+	"mindoktor.io/cmd/harness"
 )
 
 var cmdBuild = &Command{
@@ -60,11 +60,11 @@ func buildApp(args []string) {
 	}
 
 	if err := os.RemoveAll(destPath); err != nil && !os.IsNotExist(err) {
-		revel.RevelLog.Fatal("Remove all error","error", err)
+		revel.RevelLog.Fatal("Remove all error", "error", err)
 	}
 
 	if err := os.MkdirAll(destPath, 0777); err != nil {
-		revel.RevelLog.Fatal("makedir error","error",err)
+		revel.RevelLog.Fatal("makedir error", "error", err)
 	}
 
 	app, reverr := harness.Build()

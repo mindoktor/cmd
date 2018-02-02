@@ -8,8 +8,8 @@ import (
 	"go/build"
 	"strconv"
 
-	"mindoktor.io/cmd/harness"
 	"github.com/revel/revel"
+	"mindoktor.io/cmd/harness"
 )
 
 var cmdRun = &Command{
