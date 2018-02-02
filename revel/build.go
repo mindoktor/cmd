@@ -118,7 +118,7 @@ func buildApp(args []string) {
 
 	mustRenderTemplate(
 		runShPath,
-		filepath.Join(revel.RevelPath, "..", "cmd", "revel", "package_run.sh.template"),
+		filepath.Join(RevelCmdImportPath, "cmd", "revel", "package_run.sh.template"),
 		tmplData)
 
 	mustChmod(runShPath, 0755)
