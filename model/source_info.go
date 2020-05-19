@@ -3,10 +3,9 @@ package model
 // SourceInfo is the top-level struct containing all extracted information
 // about the app source code, used to generate main.go.
 import (
-	"github.com/revel/cmd/utils"
-	"path/filepath"
-	"strings"
 	"unicode"
+
+	"github.com/revel/cmd/utils"
 )
 
 type SourceInfo struct {
@@ -81,28 +80,6 @@ func (s *SourceInfo) TypesThatEmbed(targetType, packageFilter string) (filtered 
 		}
 	}
 
-	// Check for any missed types that where from expected packages
-	for _, spec := range s.StructSpecs {
-		if spec.PackageName == packageFilter {
-			found := false
-			unfoundNames := ""
-			for _, filteredItem := range filtered {
-				if filteredItem.StructName == spec.StructName {
-					found = true
-					break
-				} else {
-					unfoundNames += filteredItem.StructName + ","
-				}
-			}
-
-			// Report non controller structures in controller folder.
-			if !found && !strings.HasPrefix(spec.StructName, "Test") {
-				utils.Logger.Warn("Type found in package: "+packageFilter+
-					", but did not embed from: "+filepath.Base(targetType),
-					"name", spec.StructName, "importpath", spec.ImportPath, "foundstructures", unfoundNames)
-			}
-		}
-	}
 	return
 }
 
